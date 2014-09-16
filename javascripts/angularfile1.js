@@ -10,6 +10,10 @@ angular.module('cougarApp', ['ui.bootstrap'])
             $scope.todoText = '';
         };
 
+        $scope.removeCougar = function() {
+            $scope.cougarItems.splice($scope.todoIndex -1, 1);
+        };
+
         $scope.remaining = function() {
             var count = 0;
             angular.forEach($scope.cougarItems, function(todo) {
@@ -46,6 +50,7 @@ angular.module('cougarApp', ['ui.bootstrap'])
 
         $scope.status = {
             open: true
+
         };
     }])
 
