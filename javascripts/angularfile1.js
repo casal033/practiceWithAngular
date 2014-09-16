@@ -1,4 +1,4 @@
-angular.module('cougarApp', [])
+angular.module('cougarApp', ['ui.bootstrap'])
     .controller('CougarController', ['$scope', function($scope){
 
         $scope.cougarItems = [
@@ -27,6 +27,29 @@ angular.module('cougarApp', [])
         };
 
     }])
+
+    .controller('AccordionController', ['$scope', function($scope) {
+
+//        $scope.groups = [
+//            {
+//                title: 'Dynamic Group Header - 1',
+//                content: 'Dynamic Group Body - 1'
+//            },
+//            {
+//                title: 'Dynamic Group Header - 2',
+//                content: 'Dynamic Group Body - 2'
+//            }
+//
+//        ];
+
+        //$scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+        $scope.status = {
+            open: true
+        };
+    }])
+
+
 
     .controller('TodoController', ['$scope', function($scope) {
         $scope.todos = [
