@@ -15,8 +15,8 @@
     <h1>Super Class Super Angular Super Fun!</h1>
 
     <div class="listContainer" ng-app="cougarApp"  >
-        <div class="row">
-            <div class="col-md-6" ng-controller="CougarController">
+        <div class="column">
+            <div class="col-md-4" ng-controller="CougarController">
                 <div class="morris">
                     <h1>WordLists</h1>
                     <hr/>
@@ -25,7 +25,6 @@
                             <span>{{todo.text}}</span>
                         </li>
                     </ol>
-
                     <hr/>
                     <form ng-submit="addCougar()">
                         <input type="text" ng-model="todoText" size="40" placeholder="add new todo title!">
@@ -37,10 +36,11 @@
                         <input class="btn-primary" type="submit" value="remove">
                     </form>
                 </div>
-
             </div>
-            <div class="col-md-6 padded" >
-                <div class="morris">
+        </div>
+
+        <div class="col-md-4" >
+            <div class="morris">
                     <h2>Todo</h2>
                     <div ng-controller="TodoController">
                         <span>{{remaining()}} of {{todos.length}} remaining</span>
@@ -58,24 +58,30 @@
                         </form>
                     </div>
                 </div>
-
             </div>
-        </div>
-        <br/>
-        <div ng-controller="AccordionController" class= "morris padded">
-            <h2>Daily Schedule</h2>
 
-            <accordion>
-                <accordion-group heading="Static Hefdgsdfgader">
-                    This content is straight in the template.
-                </accordion-group>
-                <accordion-group is-open="status.open">
-                    <accordion-heading>
-                        I can have markup, too!
-                    </accordion-heading>
-                    thERE ARE THINGS HERE
-                </accordion-group>
-            </accordion>
+        <div class="col-md-4" >
+            <div class="morris">
+            <h3>Daily Schedule</h3>
+                <div ng-app>
+                    <div class="accordion__container" ng-controller="myAccordionController">
+                        <div class="accordion__tab">
+                            <div class="accordion__tab-title" ng-click="openTab('tab one')">Thing 1</div>
+                            <div class="accordion__tab-content" ng-show="isOpenTab('tab one')">Tab content goes here!</div>
+                        </div>
+                        <!-- .accordion__tab -->
+                        <div class="accordion__tab">
+                            <div class="accordion__tab-title" ng-click="openTab('tab two')">Thing 2</div>
+                            <div class="accordion__tab-content" ng-show="isOpenTab('tab two')">Tab content goes here!</div>
+                        </div>
+                        <!-- .accordion__tab -->
+                        <div class="accordion__tab">
+                            <div class="accordion__tab-title" ng-click="openTab('tab three')">Thing 3</div>
+                            <div class="accordion__tab-content" ng-show="isOpenTab('tab three')">Tab content goes here!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

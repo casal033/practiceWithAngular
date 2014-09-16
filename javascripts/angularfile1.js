@@ -32,26 +32,33 @@ angular.module('cougarApp', ['ui.bootstrap'])
 
     }])
 
-    .controller('AccordionController', ['$scope', function($scope) {
+    .controller('myAccordionController', ['$scope', function($scope) {
+        //initiate an array to hold all active tabs
+        $scope.activeTabs = [];
 
-//        $scope.groups = [
-//            {
-//                title: 'Dynamic Group Header - 1',
-//                content: 'Dynamic Group Body - 1'
-//            },
-//            {
-//                title: 'Dynamic Group Header - 2',
-//                content: 'Dynamic Group Body - 2'
-//            }
-//
-//        ];
+        //check if the tab is active
+        $scope.isOpenTab = function (tab) {
+            //check if this tab is already in the activeTabs array
+            if ($scope.activeTabs.indexOf(tab) > -1) {
+                //if so, return true
+                return true;
+            } else {
+                //if not, return false
+                return false;
+            }
+        }
 
-        //$scope.items = ['Item 1', 'Item 2', 'Item 3'];
-
-        $scope.status = {
-            open: true
-
-        };
+        //function to 'open' a tab
+        $scope.openTab = function (tab) {
+            //check if tab is already open
+            if ($scope.isOpenTab(tab)) {
+                //if it is, remove it from the activeTabs array
+                $scope.activeTabs.splice($scope.activeTabs.indexOf(tab), 1);
+            } else {
+                //if it's not, add it!
+                $scope.activeTabs.push(tab);
+            }
+        }
     }])
 
 
