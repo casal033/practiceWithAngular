@@ -1,3 +1,4 @@
+Maggie C. and Matt K.
 practiceWithAngular
 ===================
 
